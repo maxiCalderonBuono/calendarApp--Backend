@@ -13,7 +13,7 @@ dbConnection();
 
 //Cors
 
-app.use(cors());
+app.use(cors({ origin: allowedOrigins }))
 
 //Public
 
