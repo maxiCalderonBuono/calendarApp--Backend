@@ -66,7 +66,7 @@ const login = async (req, res = response) => {
 
     res.status(201).json({
       ok: true,
-      udi: user.id,
+      uid: user.id,
       name: user.name,
       token,
     });
