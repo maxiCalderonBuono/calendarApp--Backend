@@ -34,9 +34,9 @@ app.use(express.json());
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
-
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+// Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 //Listening
