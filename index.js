@@ -3,13 +3,7 @@ const path = require("path");
 require("dotenv").config();
 const { dbConnection } = require("./database/config");
 const cors = require("cors");
-
-const allowedOrigins = {
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-};
+const corsOptions = require("config/corsOptions");
 
 //Init server
 
@@ -21,7 +15,7 @@ dbConnection();
 
 //Cors
 
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors(corsOptions));
 
 //Public
 
