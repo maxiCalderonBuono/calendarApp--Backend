@@ -3,7 +3,7 @@ const path = require("path");
 require("dotenv").config();
 const { dbConnection } = require("./database/config");
 const cors = require("cors");
-const corsOptions = require("./config/corsOptions");
+// const corsOptions = require("./config/corsOptions");
 
 //Init server
 
@@ -15,7 +15,7 @@ dbConnection();
 
 //Cors
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 //Public
 
